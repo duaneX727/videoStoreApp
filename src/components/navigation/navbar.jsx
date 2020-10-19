@@ -3,7 +3,6 @@ import NavSideBar from './navSidebar';
 import {Link} from 'react-router-dom';
 
 const NavBar = ({selectedNavItem, onItemSelect}) => {
-  console.log(selectedNavItem);
    return ( 
     <nav 
       className="navbar navbar-expand-sm navbar-light bg-light">

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { getMovies } from '../services/fakeMovieService';
-import Pagination from './common/pages/pagination';
-import { paginate } from '../utils/paginate';
-import { getGenres } from '../services/fakeGenreService';
-import ListGroup from './common/pages/list-group';
+import { getMovies } from '../../services/fakeMovieService';
+import Pagination from '../../utils/pagination';
+import { paginate } from '../../utils/paginate';
+import { getGenres } from '../../services/fakeGenreService';
+import ListGroup from '../common/list-group';
 import MoviesTable from './moviesTable';
 import _ from 'lodash';
 
@@ -60,7 +60,6 @@ class Movies extends Component {
 
     return {totalCount: filtered.length, data: movies};
   };
-
 
   render(){
     const { length: count } = this.state.movies;

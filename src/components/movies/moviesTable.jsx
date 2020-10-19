@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Like from './common/like';
-import Table from './common/table';
+import Like from '../common/like';
+import Table from '../table/table';
 
 class MoviesTable extends Component {
   columns = [
@@ -11,7 +11,7 @@ class MoviesTable extends Component {
     {
       key: "like",
       content: movie => (
-        <Like liked={movie.liked} onClick={() => this.props.onLike(movie)} />)
+        <Like liked={movie.liked} onClick={() => this.props.onLike(movie)}/>)
     },
     {
       key: "delete",
@@ -20,12 +20,14 @@ class MoviesTable extends Component {
     },
   ];
   render() {
+     
     const {movies,onSort,sortColumn} = this.props;
     return (
       <Table 
         data={movies} 
         onSort={onSort} 
-        sortColumn={sortColumn} columns={this.columns} 
+        sortColumn={sortColumn} 
+        columns={this.columns} 
       />
     );
   }

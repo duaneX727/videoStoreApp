@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 // movies
@@ -6,8 +7,9 @@ import _ from 'lodash';
 // onDelete
 
 class TableBody extends Component {
-  renderCell = (item, column) => {
+  renderCell = (item, column, id) => {
     if(column.content) return column.content(item);
+    if(column.path === 'title') return <Link to={`/nav/movies/${id}`}>{item.title}</Link>;
     return _.get(item, column.path);
   };
   createKey = (item, column) =>{
@@ -15,11 +17,13 @@ class TableBody extends Component {
   };
   render() { 
     const {data, columns} = this.props;
-    return (<tbody>
+    return (
+    <tbody>
       {data.map(item => <tr key={item._id}>
-       {columns.map(column => <td key={this.createKey(item, column)}>{this.renderCell(item, column)}</td>)}
+       {columns.map(column => <td key={this.createKey(item, column)}>{this.renderCell(item, column, item._id)}</td>)}
       </tr>)}
-    </tbody>);
+    </tbody>
+    );
   }
 }
  

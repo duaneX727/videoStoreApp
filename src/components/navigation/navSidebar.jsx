@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const NavSideBar = ({onItemSelect,selectedNavItem:item}) => {
-  console.log(item);
   return ( 
     <ul className="navbar-nav mr-left">
       <li className="nav-item ">
