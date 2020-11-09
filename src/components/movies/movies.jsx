@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { getMovies } from '../../services/fakeMovieService';
 import Pagination from '../../utils/pagination';
 import { paginate } from '../../utils/paginate';
-import { genres, getGenres} from '../../services/fakeGenreService';
+import { getGenres} from '../../services/fakeGenreService';
 import ListGroup from '../common/list-group';
 import MoviesTable from './moviesTable';
 import { Link } from 'react-router-dom';
