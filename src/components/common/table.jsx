@@ -1,7 +1,6 @@
 import React from 'react';
 import TableBody from './tableBody';
 import TableHeader from './tableHeader';
-import { PropTypes } from 'prop-types';
 
 const Table = ({sortColumn,onSort, data, columns}) => {
   return ( 
@@ -18,7 +17,5 @@ const Table = ({sortColumn,onSort, data, columns}) => {
       </table>
    );
 }
-Table.propTypes = {
-  movies: PropTypes.array,onSort: PropTypes.func.isRequired,sortColumn: PropTypes.object.isRequired, columns: PropTypes.array
-}
+ 
 export default Table;

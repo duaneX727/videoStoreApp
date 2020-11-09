@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
+import { PropTypes } from 'prop-types';
 
 // movies
 // onLike
@@ -26,5 +27,7 @@ class TableBody extends Component {
     );
   }
 }
- 
+TableBody.propTypes = {
+  data: PropTypes.array.isRequired, columns: PropTypes.array.isRequired
+} 
 export default TableBody;

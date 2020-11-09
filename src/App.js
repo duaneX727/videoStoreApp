@@ -1,55 +1,36 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
+import RegisterForm from './components/registerForm';
+import CustomersForm from './components/customerForm';
+import RentalsForm from './components/rentalsForm';
+import NotFound from './components/notFound';
 import Movies from './components/movies/movies';
-import { Route, Switch } from 'react-router-dom';
-import MovieDetails from './components/movieDetails';
-import MovieComponent from './components/movieComponent';
-import RentalComponent from './components/rentalComponent';
-import CustomerComponent from './components/customerComponent';
-import Home from './components/home';
+import MoviesForm from './components/moviesForm';
+import LoginForm from './components/loginForm';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import NavBar from './components/navigation/navbar';
-import _ from 'lodash';
+import './App.css';
 
 
-
-class App extends Component {
-  state = {
-    navItem: null
-  }
-  handleNavItemSelect = navItem => {
-    this.setState({
-      navItem,
-    });
-  }
-  handleItemSelect = item => {
-    console.log(item);
-    //const _id = _.get(item, "_.id");
-  }
-  handelMovieId = id => {
-    this.setState({
-      id
-    });
-  }
-  render() {
-    const { navItem } = this.state;
-    return (
+function App() {
+  return (
+    <React.Fragment>
+      <NavBar />
       <main className="container">
-        <NavBar
-          selectedNavItem={navItem}
-          onItemSelect={this.handleNavItemSelect}
-        />
-        <div className="content">
-          <Switch>
-            <Route path="/nav/movies/:id" component={MovieDetails}/>
-            <Route path="/nav/movies" component={MovieComponent} />
-            <Route path="/nav/rentals" component={RentalComponent} />
-            <Route path="/nav/customers" component={CustomerComponent} />
-            {/* <Route path="/" component={Home}/> */}
-          </Switch>
-          {navItem === null && <Movies onItemSelect={this.handleItemSelect}/>}
-        </div>
+        <Switch>
+          <Route path="/register" component={RegisterForm} />
+          <Route path="/login" component={LoginForm} />
+          <Route path="/movies/new" component={MoviesForm} />
+          <Route path="/movies/:id" component={MoviesForm} />
+          <Route path="/movies" component={Movies} />
+          <Route path="/customers" component={CustomersForm} />
+          <Route path="/rentals" component={RentalsForm} />
+          <Route path="/not-found" component={NotFound} />
+          <Redirect from="/" exact to="/movies" />
+          <Redirect to="/not-found" />
+        </Switch>
       </main>
-    );
-  }
+    </React.Fragment>
+  );
 }
+
 export default App;

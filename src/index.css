@@ -1,9 +1,12 @@
 body {
   margin: 0;
-  padding: 20x 0 0 0;
+  padding: 0 0 0 0;
   font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.navbar {
+  margin-bottom: 30px;
 }
 .clickable {
   cursor: pointer;
@@ -11,4 +14,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#new-btn a { color: white;}
+#new-btn {
+  margin-bottom: 10px;
+}
+#inputGroupSelect04 {
+  padding-right: 300px;
 }
