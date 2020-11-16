@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Selector = ({ name, label,options,value,onChangeSelection, textProperty,valueProperty,error}) => {
-  //let optionsArr = [];
+const Selector = ({ name, label, options, selectedValue: value, textProperty, valueProperty,onChangeSelection}) => {
+  //console.log('Selector: value: ', value);
   return (
     <React.Fragment>
       <label htmlFor={name}>{label}</label>
@@ -9,12 +9,13 @@ const Selector = ({ name, label,options,value,onChangeSelection, textProperty,va
         <select
           className="custom-select"
           value={value} 
-          onChange={(value)=>onChangeSelection(value)}>
+          onChange={(value)=>onChangeSelection(value,name)}>
           {options.map((option)=> (
             <option key={option[valueProperty]} value={option[textProperty]}>
                {option[textProperty]}
             </option>))}
         </select>
+        {/* {error && <div className="alert alert-danger">{error}</div>} */}
        </div>
     </React.Fragment>
   );

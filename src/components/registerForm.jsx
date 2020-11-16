@@ -4,6 +4,9 @@ import Form from './common/form';
 
 
 class RegisterForm extends Form {
+  username = React.createRef();
+  password = React.createRef();
+  name = React.createRef();
   state = {
     data: {username: '', password: '', name: ''},
     errors: {}
