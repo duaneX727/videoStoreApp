@@ -11,7 +11,7 @@
     "font-awesome": "^4.7.0",
     "http-proxy": "^1.18.1",
     "joi-browser": "^13.4.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "node-forge": "^0.10.0",
     "object-path": "^0.11.5",
     "prop-types": "^15.6.2",
